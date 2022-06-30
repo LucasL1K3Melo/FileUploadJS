@@ -1,22 +1,23 @@
 const form = document.querySelector("form"),
-fileInput = document.querySelector(".file_input"),
-progressArea = focument.querySelector(".progress-area"),
+fileInput = document.querySelector(".file-input"),
+progressArea = document.querySelector(".progress-area"),
 uploadedArea = document.querySelector(".uploaded-area");
 
+// Form click event:
 form.addEventListener("click", ()=> {
     fileInput.click();
 });
 
 fileInput.onchange = ({target}) => {
-    let file = target.files[0];
+    let file = target.files[0]; // Getting file [0] this means if user has selected multiple files then get first one only.
     
     if(file){
         let fileName = file.name;
-        if(fileName.length >= 12){
+        if(fileName.length >= 12){ // If file name length is greater than 12 then split it and add...
             let splitName = fileName.split('.');
             fileName = splitName[0].substring(0, 13) + "...." + splitName[1];
         }
-        uploadFile(fileName);
+        uploadFile(fileName); // Calling uploadFile with passing file name as an argument:
     }
 }
 
