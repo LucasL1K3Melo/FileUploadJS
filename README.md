@@ -1,4 +1,4 @@
 # FileUploadJS
 Treinamento de programação em JS.
 
-![Screenshot](demonstration.png)
+![Screenshot](demonstration.jpeg)
